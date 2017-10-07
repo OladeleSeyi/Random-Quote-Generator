@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Random Qoute machine</title>	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<style type="text/css">
+		body, html{
+			height: 100%;
+			margin: 0;
+		}
+		.hero-image {
+			height: 100%;
+			background-image: url("assets/tumblr_ogsp6wz1yf1uf28nso1_1280.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+		.quote-box{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 20px;
+			background: #333;
+			opacity: 0.7;
+			color: #FFF;
+		}
+		.landing, .quote-space{
+			margin: auto;
+    		text-align: center;
+		}
+
+		.test{
+			background: #333;
+			height: 300px;
+			width: 300px;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://localhost/augustbatch/localCDN/animate.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/augustbatch/localCDN/material-components-web.min.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/augustbatch/localCDN/Bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/augustbatch/localCDN/font-awesome.min.css">
+</head>
+<body>
+	<div class="hero-image">
+		<div class="quote-box  mdc-elevation--z21">
+			<div class="landing" id="landing">
+					<p class="mdc-typography--display4 mdc-typography--adjust-margin" style="font-size:50px">
+					    <i class="fa fa-quote-left"></i><span>Man Plans God Laughs</span><i class="fa fa-quote-right"></i>
+					</p>
+
+					<footer><h3>Psalms 2:1 <cite>The Bible</cite></h3></footer>
+					<div class="row">
+						<div class="col-sm-offset-4 col-sm-4">
+							<button class="btn btn-info btn-block" id="enter"><span>Enter</span></button>
+						</div>
+					</div>	
+			</div>
+			<div class="quote-space container" id="quote-space" style="display: none;">
+				<H2 ><i class="fa fa-quote-left"></i><span id="quote-text" class="quote-text">Man Plans God Laughs</span><i class="fa fa-quote-right"></i>
+				</H2>
+				<footer><h3><span id="quote-author" class="quote-author">Psalms 2:1 </span><cite id="movie" class="movie">The Bible</cite></h3></footer>
+				<div class="row">
+					<div class="col-sm-offset-4 col-sm-4">
+						<button class="mdc-fab material-icons btn" id="quote" aria-label="Favorite" data-mdc-auto-init="MDCRipple">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								 <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+	    					</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="http://localhost/augustbatch/localCDN/jquery.js"></script>
+	<script type="text/javascript" src="http://localhost/augustbatch/localCDN/material-components-web.min.js" async></script>
+	<script type="text/javascript" src="http://localhost/augustbatch/localCDN/Bootstrap/js/bootstrap.js" async></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js" async></script>
+
+	<script type="text/javascript">
+		$('#enter').click(function () {
+			// $('p').css('color', '#000');
+			$('#landing').fadeOut(1000);
+			$('#quote-space').delay(2000).fadeIn(1500);
+			$('#quote-space').addClass('animated pulse');
+			$('.quote-space').delay(4000).css('background', '#000');
+			$('.hero-image').delay(1000).css('background', 'transparent');
+			$('.quote-space').delay(4000).css('border-radius', '20px');
+			$('#landing').removeClass('active');
+			$('#quote-space').addClass('active');
+		});
+	</script>
+	<script type="text/javascript" async>
+		var randomColor = ['#16a085', '#27ae60','#000', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+		var data = [
+		  {
+		    quote: "People put you down enough you start to believe it.",
+		    author: "Vivian,",
+		    movie: " Pretty Woman"
+		  },
+		  {
+		    quote: "Why do guys always know  how to hit a woman right across the cheek wham!!! and it feels like your eyes is gonna explode what do they do, do they pull you aside in high school and show you how to do this.",
+		    author: "Vivian,",
+		    movie: " Pretty Woman"
+		  },
+		  {
+		    quote: "Not  all guys Hit.",
+		    author: "Edward Lewis,",
+		    movie: " Pretty Woman"
+		  },
+		  {
+		    quote: "Zed\'s Dead baby! Zed\'s Dead!!",
+		    author: "Butch,",
+    		movie: " Pulp Fiction"
+		  },
+		  {
+		    quote: "What happened to your leg ....I got a little bit run over.",
+		    author: "The Inbetweeners Movie",
+    		movie: ""
+		  },
+		  {
+		    quote: "Two sprained, ankles one cracked rib, official cause of accident listed on the hospital form ...... Pussy!!!",
+		    author: "Timothy Cavendish,",
+    		movie: " Cloud Atlas"
+		  },
+		  {
+		    quote: "What is an ocean but a multitude of drops.",
+		    author: "Adam Ewing,", 
+    		movie: " Cloud Atlas"
+		  },
+		  {
+		    quote: "Our lives are not our own ..from womb to tomb we are bound to others, past and present ...and by each crime and every kindness we birth our future ......",
+		    author: "Somni 451,",
+    		movie: " Cloud Atlas"
+		  },
+		  {
+		    quote: "I believe death is only a door when it closes another opens.",
+		    author: "Somni 451,",
+    		movie: " Cloud Atlas"
+		  },
+		  {
+		    quote: "Here\'s your fucking landing light!!!",
+		    author: "John McClaine,",
+    		movie: " Die Hard 2"
+		  },
+		  {
+		    quote: "Mistakes made in the past always come back to bite you in the ass.",
+		    author: "Oladele Seyi 2016",
+    		movie: ""
+		  },
+		  {
+		  	quote: "Whoever saves one life, saves the world entire.",
+		  	author: "Itzhak Stern,",
+		  	movie: " Schindler\'s List"
+		  },
+		  {
+		  	quote: "Power is when we have every justification to kill and we don\'t.",
+		  	author: "Oskar Schindler,",
+		  	movie: " Schindler\'s List"
+		  },
+		  {
+		  	quote: "Do not go gentle into thart good night. Rage, rage against the dying of the light.",
+		  	author: "Prof. Brand,",
+		  	movie: " Interstellar"
+		  },
+		  {
+		  	quote: "We used to look up at the sky and wonder at our place in the stars, now we just look down and worry about our place in the dirt.",
+		  	author: "Cooper,",
+		  	movie: " Interstellar"
+		  },
+		  {
+		  	quote: "Parents are the ghost of their children\'s future.",
+		  	author: "Cooper,",
+		  	movie: " Interstellar"
+		  },
+		  {
+		  	quote: "Love is one thing that transcends time and space.",
+		  	author: "Brand,",
+		  	movie: " Interstellar"
+		  },
+		  {
+		  	quote: "We\’ve always defined ourselves by the ability to overcome the impossible and we count these moments, these moments when we dare to aim higher, to break barriers, to reach for the stars, to make the unknown known, we count these moments as our proudest achievements. But we lost all that. Or perhaps we’ve just forgotten that we are still pioneers, and we\’ve barely begun. And that our greatest accomplishments cannot be behind us, because our destiny lies above us.",
+		  	author: "Cooper,",
+		  	movie: " Interstellar"
+		  },
+		  {
+		  	quote: "You musn\'t be afraid to dream a little bigger darling.",
+		  	author: "Eames,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "A single idea from the human mind can build cities. an idea can transform the world and rewrite all the rules.",
+		  	author: "Cobb,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "What is the most resilient parasite? Bacteria? A virus? An intestinal worm?  An idea. Resilient… highly contagious. Once an idea has taken hold of the brain it\’s almost impossible to eradicate. An idea that is fully formed – fully understood- that sticks; right in there somewhere.",
+		  	author: "Cobb,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "Dreams feel real while we\'re in them. It\'s only when we wake up we realize something was actually strange.",
+		  	author: "Cobb,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "Never recreate from your memory. Always imagine new places!",
+		  	author: "Cobb,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "I miss you more than I can bear, but we had our time together. I have to let you go.",
+		  	author: "Cobb,",
+		  	movie: " Inception"
+		  },
+		  {
+		  	quote: "Twenty years after an Irishman couldn’t get a fucking job, we had the presidency. May he rest in peace. That\’s what the niggers don’t realize. If I got one thing against the black chappies, it\’s this – no one gives it to you. You have to take it.",
+		  	author: "Frank Castello,",
+		  	movie: " The Departed"
+		  },
+		  {
+		  	quote: "I don\’t want to be a product of my environment.  I want my environment to be a product of me.",
+		  	author: "Frank Castello,",
+		  	movie: " The Departed"
+		  },
+		  {
+		  	quote: "Death is hard, Life is much easier.",
+		  	author: "Madolyn,",
+		  	movie: " The Departed"
+		  },
+		  {
+		  	quote: "The greatest trick the devil ever pulled was convincing the world he didn\'t exist",
+		  	author: "Verbal,",
+		  	movie: " The Usual Suspects"
+		  },
+		  {
+		  	quote: "Keaton always said, \"I don\'t believe in God but I\'m afraid of him.\" Well I belive in God and the only thing that scares me is Keyser Soze.",
+		  	author: "Verbal,",
+		  	movie: " The Usual Suspects"
+		  },
+		  {
+		  	quote: "People pontificate, \'suicide is a coward\'s act\'. Couldn\'t be further from the truth. Suicide takes tremendous courage.",
+		  	author: "Robert Frobisher,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "All boundaries are conventions, waiting to be transcended.",
+		  	author: "Robert Frobisher,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "One may transcend any convention, if only one can first conceive of doing so.",
+		  	author: "Robert Frobisher,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "I know, I know.",
+		  	author: "Mr. Meeks,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "Belief, like fear or love, is a force to be understood as we understand the theory of relativity and principles of uncertainty. Phenomena that determine the course of our lives. Yesterday, my life was headed in one direction. Today, it is headed in another. Yesterday, I believe I would never have done what I did today. These forces that often remake time and space, they can shape and alter who we imagine ourself to be, begin long before we are born, and continue after we perish. Our lives and our choices, like quantum trajectories, are understood moment to moment. At each point of intersection, each encounter, suggest a new potential direction.",
+		  	author: "Isaac Sachs,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "Ain\'t no blade can protect you from the true true.",
+		  	author: "Old Georgie,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "Truth is singular. It\'s \"versions\" are mistruths.",
+		  	author: "Somni 451,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "My life extends far beyond the limitations of me.",
+		  	author: "Robert Frobisher,",
+		  	movie: " Cloud Atlas"
+		  },
+		  {
+		  	quote: "All Death is certain.",
+		  	author: "Hospitaler,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "A king does not kill a king. Were you not close enough to a great king to learn by his example?",
+		  	author: "Saladin,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "A king may move a man, a father may claim a son, but that man can also move himself, and only then does that man truly begin his own game. Remember that howsoever you are played or by whom, your soul is in your keeping alone, even though those who presume to play you be kings or men of power. When you stand before God, you cannot say, \"But I was told by others to do thus,\" or that virtue was not convenient at the time. This will not suffice. Remember that.",
+		  	author: "King Baldwin IV,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "Sometimes it is better to do a lesser evil to do a greater good.",
+		  	author: "Sibylla,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "I put no stock in religion. By the word religion I have seen the lunacy of fanatics of every denomination be called the will of God. I have seen too much religion in the eyes of too many murderers. Holiness is in right action, and courage on behalf of those who cannot defend themselves, and goodness. What God desires is here [points to head]and here [points to heart] and what you decide to do every day, you will be a good man - or not.",
+		  	author: "Hospitaller,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "Be brave in the face of your enemies. Be upright so that God may love thee. Speak the truth always, even if it leads to your death. That is your oath, (slaps Balian) and that is so you remember it. Rise a Knight, and a Baron of Ibelin.",
+		  	author: "Godfrey to Balian,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "It\'s funny. On the outside, I was an honest man. Straight as an arrow. I had to come to prison to be a crook.",
+		  	author: "Andy Dufresne,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Remember Red, hope is a good thing, maybe the best of things, and no good thing ever dies.",
+		  	author: "Andy Dufresne,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Get busy living, or get busy dying.",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Hope is a dangerous thing my friend, it can kill a man...",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Hope is a dangerous thing. Drive a man insane.",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Sometimes it makes me sad, though... Andy being gone. I have to remind myself that some birds aren\’t meant to be caged. Their feathers are just too bright. And when they fly away, the part of you that knows it was a sin to lock them up does rejoice. But still, the place you live in is that much more grey.",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "I know what you think it means. Me, I think it\'s a made-up word, a politician\'s word. A word so young fellas like you can wear a suit and tie and have a job. What do you really want to know? Am I sorry for what I did?...... Not a day goes by I don\'t feel regret, and not because I\'m in here or because you think I should. I look back on myself the way I was...stupid kid who did that terrible crime...wish I could talk sense to him. Tell him how things are. But I can\'t. That kid\'s long gone, this old man is all that\'s left, and I have to live with that. [beat] Rehabilitated? That\'s a bullshit word, so you just go on ahead and stamp that form there, sonny, and stop wasting my damn time.\n Truth is, I don\'t give a shit.",
+		  	author: "Ellis Boy \"Red\" Redding on rehabilitation,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "(Returning bible containing rock hammer back to Andy) \"Salvation lies within.\"",
+		  	author: "Warden Samuel Norton,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "I\'d hate to deprive you of this. Salvation lies within.",
+		  	author: "Warden Samuel Norton,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Dear Warden, You were right, Salvation lay within.",
+		  	author: "Andy Dufresne,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Every man's got a breaking point.",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "Andy dufresne, the man who crawled through 500 yards of shit and came out clean the other end.",
+		  	author: "Ellis Boy \"Red\" Redding,",
+		  	movie: " The Shawshank Redemption"
+		  },
+		  {
+		  	quote: "......and if God does not love you, how could you have done the things you have done?",
+		  	author: "Nasir,",
+		  	movie: " Kingdom of Heaven"
+		  },
+		  {
+		  	quote: "Valar Morghulis",
+		  	author: "",
+		  	movie: "The Game of Thrones"
+		  },
+		  {
+		  	quote: "Valar Dohaeris",
+		  	author: "",
+		  	movie: "The Game of Thrones"
+		  },
+		  {
+		  	quote: "I\'m gonna make him an offer he can\'t refuse.",
+		  	author: "Don (Vito) Corleone,",
+		  	movie: " The Godfather"
+		  },
+		  {
+		  	quote: "It is said some lives are linked across time connected by an ancient calling that echoes through the ages.",
+		  	author: "The Prince of Persia",
+		  	movie: ""
+		  }
+		];
+		$(document).ready(function() {
+			var tweetquote = "tweet"; 
+			$("#quote").on("click", function() {
+				var randomNum = Math.floor(Math.random()*data.length);
+				$(".quote-text").animate(
+					{opacity: 0}, 800, 
+					function() {
+						$(this).animate({opacity:1}, 800);
+						$("#quote-text").text(data[randomNum].quote);
+						});
+
+				$(".quote-author").animate(
+					{opacity: 0}, 1000,
+					function () {
+						$(this).animate({opacity: 1}, 1000);
+						$("#quote-author").text(data[randomNum].author);
+					});
+				$(".quote-box").animate(
+					{opacity: 0.5}, 1000, function() {
+					$(this).animate({opacity: 1}, 1000);
+				});
+				$("#movie").text(data[randomNum].movie);
+				// ${}	
+
+				var randColor = Math.floor(Math.random() * randomColor.length);
+				$(".hero-image").animate({backgroundColor: randomColor[randColor]}, 1000);
+			});
+		});
+	</script>
+	<script type="text/javascript" async>
+		window.mdc.autoInit();
+	</script>
+</body>
+</html>
